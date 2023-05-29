@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    database: mysql
+#    properties:
+#      hibernate:
+#        connection:
+#          provider_disables_autocommit: true
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    username: root
+    password: toor
+    url: jdbc:mysql://localhost:3306/unificacion
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-test-query: SELECT 1
+      pool-name: 'transactional-101-cp'
+      auto-commit: true
+      maximum-pool-size: 3
+      minimum-idle: 1
+
+logging:
+  level:
+    org.springframework.transaction: TRACE
