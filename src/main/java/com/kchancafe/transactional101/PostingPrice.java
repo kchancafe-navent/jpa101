@@ -14,7 +14,7 @@ import javax.persistence.Table;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Entity
-@Table(name = "items")
+@Table(name = "posting_prices")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,10 +23,10 @@ import java.util.concurrent.ThreadLocalRandom;
 public class PostingPrice {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "posting_price_id")
     private Long id;
-    @Column(name = "posting_id")
+    @Column(name = "posting_id", insertable = false, updatable = false)
     private Long postingId;
     @Column(name = "price")
     private Integer price;
